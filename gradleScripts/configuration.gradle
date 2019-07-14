@@ -1,0 +1,88 @@
+/**
+ * 创建配置对象实例
+ */
+//Project.configurations是ConfigurationContainer对象实例，一个配置对象容器
+//configurations.create('myConfiguration')//使用容器的create()方法创建实例
+
+
+//方式二：使用命名域创建实例，见Syntax.gradle
+//configurations {
+//    myConf //创建配置对象实例，实例民myConf，等同调用create()方法
+//}
+
+
+
+
+
+
+
+/**
+ * 访问新建的的实例
+ */
+//configurations.create('myConfiguration') //创建配置对象实例
+
+//方式一：闭包中访问实例
+//configurations.myConfiguration { //map num = [one:111, two:22] 可以使用num.one获取元素
+//    transitive = false
+//}
+
+//configurations.myConfiguration.transitive = false //方式二：直接访问容器元素
+
+
+/**
+ * 遍历打印配置对象属性
+ */
+configurations.create 'oo' //创建配置对象实例
+configurations.oo { //访问配置对象实例
+
+    //方法一
+//    allArtifacts
+//    artifacts
+//    resolutionStrategy
+//    resolvedConfiguration
+    allDependencies.each { println "allDependencies|" + it }
+    buildDependencies.each { println "buildDependencies|" + it }
+    dependencies.each { println "dependencies|" + it }
+    excludeRules.each { println "excludeRules|" + it }
+    extendsFrom.each { println "extendsFrom|" + it }
+    hierarchy.each { println "hierarchy|" + it }
+//    ResolutionResult resolutionResult = incoming.resolutionResult
+//    ResolvedComponentResult root = resolutionResult.root
+//    println root.dependencies.size()
+
+    incoming.resolutionResult.allComponents {
+        println it
+    }
+
+
+    println "description|" + description
+    println "name|" + name
+    println "state|" + state
+    println "transitive|" + transitive
+    println "visible|" + visible
+
+
+    //方法二
+//    println "allArtifacts is " + allArtifacts
+//    println "allDependencies is " + allDependencies
+//    println "artifacts is " + artifacts
+//    println "buildDependencies is " + buildDependencies
+//    println "dependencies is " + dependencies
+//    println "description is " + description
+//    println "excludeRules is " + excludeRules
+//    println "extendsFrom is " + extendsFrom
+//    println "hierarchy is " + hierarchy
+//    println "incoming is " + incoming
+//    println "name is " + name
+//    println "resolutionStrategy is " + resolutionStrategy
+//    println "resolvedConfiguration is " + resolvedConfiguration
+//    println "state is " + state
+//    println "transitive is " + transitive
+//    println "visible is " + visible
+
+}
+
+
+//configuration({
+//    println "ccc"
+//})

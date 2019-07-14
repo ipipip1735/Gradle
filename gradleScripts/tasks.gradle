@@ -1,0 +1,97 @@
+/**
+ * 创建任务
+ */
+task hello(group: 'mine') {
+    doLast {
+        println 'hello world'
+    }
+}
+hello.onlyIf {
+    false
+//    true
+}
+
+
+
+/**
+ * 自定义Task对象
+ */
+//class MineTask extends DefaultTask {
+//    String one
+//    String two
+//
+//    @TaskAction
+//    void sayGreeting() {
+//        println "one=${one}, two=${two}!!"
+//    }
+//}
+//def action = { println("~~action~~")}
+//
+//task xx(type: MineTask, group: 'mine', action: action){
+//    println it
+//    println owner
+//    println delegate
+//    println this
+//    println "--------------"
+//    it.one = 111
+//    delegate.two = 222
+//    owner.two += 333
+//
+//    it.description = "Task mine -- custom task"
+//
+//    it.doFirst{
+//        println("~~doFirst~~")
+//
+//    }
+//    delegate.doLast{
+//        println "~~doLast~~"
+//    }
+//} onlyIf {
+////    true
+//    false
+//}
+
+
+
+/**
+ * 注册任务
+ */
+//tasks.register('KK.main()', JavaExec){
+//    dependsOn 'compileJava'
+//    classpath = files(configurations.oo.incoming.files, "$rootDir\\out")
+//    main = 'KK'
+//}
+//tasks.each{ println it}
+
+
+
+/**
+ * 编译任务
+ */
+//task cpl(type: JavaCompile){
+//    classpath = files('C:\\Users\\Administrator\\.m2\\repository\\log4j\\log4j\\1.2.17\\log4j-1.2.17.jar')
+//    source = fileTree('src')
+//    destinationDir = file("$rootDir\\out")
+//    exclude '**/OO.java'
+//}
+
+
+
+/**
+ * 执行任务
+ */
+//task KK.main()(type:  JavaExec) {
+//    dependsOn 'cpl'
+//    classpath = files('C:\\Users\\Administrator\\.m2\\repository\\log4j\\log4j\\1.2.17\\log4j-1.2.17.jar', "$rootDir\\out")
+//    main = 'KK'
+//}
+
+
+
+//task exe(type: JavaExec){
+//    dependsOn 'cpl'
+//    classpath = files('C:\\Users\\Administrator\\.m2\\repository\\log4j\\log4j\\1.2.17\\log4j-1.2.17.jar', "$rootDir\\out")
+//    main = 'KK'
+//}
+
+

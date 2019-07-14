@@ -1,0 +1,45 @@
+/**
+ * DSL特殊语法
+ * 可以将普通JAVA对象封装为命名域对象（NamedDomainObjectContainer）
+ * 那么就支持DSL特殊语法，对象实例 + 闭包，然后在闭包中配置命名域对象
+ */
+class Person {
+    def age
+    String name
+
+    Person(String name) {
+        println "~~Person~~"
+        this.name = name
+    }
+
+}
+
+NamedDomainObjectContainer<Person> personContainer = container(Person) //创建配置容器对象
+project.extensions.add('ps', personContainer)//将包装为配置容器的Person对象增加为Project对象的属性
+
+//例一
+//ps{
+//    pone{age = 15} //创建实例
+//    ptwo{age = 25} //创建实例
+//}
+//personContainer.all{
+//    println it
+//}
+
+//例二
+ps{
+    bob { age=14}
+    tom { age=24}
+}
+ps {
+    println(it)
+}
+
+task xx {
+    ps.all {
+        println "$name'age is $age"
+    }
+}
+
+
+

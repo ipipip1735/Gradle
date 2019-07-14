@@ -1,0 +1,30 @@
+println "===Project One==="
+
+//Projects.gradle中已经定义了onetk任务，这里可以直接使用
+onetk{
+    //打印任务数据
+    println "actions is " + actions
+    println "ant is " + ant
+    println "convention is " + convention
+    println "dependsOn is " + dependsOn
+    println "description is " + description
+    println "destroyables is " + destroyables
+    println "didWork is " + didWork
+    println "enabled is " + enabled
+    println "extensions is " + extensions
+    println "finalizedBy is " + finalizedBy
+    println "group is " + group
+    println "inputs is " + inputs
+    println "localState is " + localState
+    println "logger is " + logger
+    println "logging is " + logging
+    println "mustRunAfter is " + mustRunAfter
+    println "name is " + name
+    println "outputs is " + outputs
+    println "path is " + path
+    println "project is " + project
+    println "state is " + state
+    println "taskDependencies is " + taskDependencies
+    println "temporaryDir is " + temporaryDir
+    println "timeout is " + timeout
+}

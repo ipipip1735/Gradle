@@ -1,0 +1,90 @@
+/**
+ * 源码集
+ */
+//sourceSets {
+//    println("~~sourceSets~~")
+//    main{}
+//
+//}
+
+
+
+//sourceSets {
+//    println("~~sourceSets~~")
+//            println "--sourceSets-- $it"
+//    main {
+//        println "--main-- $it"
+//
+//        java {
+//            println "--java-- $it"
+//            println "name is $name"
+////            include 'src/main/java/*.java'
+//            outputDir = new File('E:\\Program\\Java\\Intellij\\Gradle\\out')
+//            srcDirs 'E:\\Program\\Java\\Intellij\\Gradle\\src\\main\\java'
+//
+//            println "outputDir is $outputDir"
+//            println "srcDirTrees is $srcDirTrees"
+//            println "srcDirs is $srcDirs"
+//        }
+//
+//    }
+//
+//}
+
+
+
+
+
+//import javax.tools.JavaCompiler
+//task compile(type: JavaCompile){
+//    classpath = files('out')
+//    source = fileTree('src'){
+//        exclude('src/main/java/oo.java')
+//    }
+//    source.each {println it}
+//    destinationDir = file("$rootDir/out")
+//}
+
+//fileTree('src'){
+//    exclude('**/*.java')
+//}.each {
+//    println it
+//}
+
+
+
+//task cpl(type: JavaCompile){
+//
+//    println "-----$it"
+//
+//
+//    source "src/main/java"
+////    exclude 'kk.java'
+////    println source.files
+//
+//    classpath = configurations.compileClasspath
+//
+//
+//    destinationDir = new File("$rootDir/out")
+////    println destinationDir
+//
+//
+////    sourceCompatibility = 11
+////    targetCompatibility = 11
+//
+//}
+
+//task compile(type: JavaCompile){
+//    classpath = files('out')
+//    source = fileTree('src'){
+//        exclude('src/main/java/oo.java')
+//    }
+//    source.each {println it}
+//    destinationDir = file("$rootDir/out")
+//}
+
+//fileTree('src'){
+//    exclude('**/*.java')
+//}.each {
+//    println it
+//}

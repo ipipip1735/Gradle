@@ -1,0 +1,169 @@
+/**
+ * allprojects代码块是全局代码块，任意脚本都将先执行它
+ */
+//allprojects {
+//
+//
+//    task globleTask {
+//        println("TaskName is " + name)
+//    }
+//}
+
+
+/**
+ * 获取子项目对应的Project对象实例
+ */
+//project("one"){ //获取子项目one的Project对象
+//
+//    //打印one实例的属性
+////    println "allprojects is " + allprojects
+////    println "ant is " + ant
+////    println "artifacts is " + artifacts
+////    println "buildDir is " + buildDir
+////    println "buildFile is " + buildFile
+////    println "buildscript is " + buildscript
+////    println "childProjects is " + childProjects
+////    println "configurations is " + configurations
+////    println "convention is " + convention
+////    println "defaultTasks is " + defaultTasks
+////    println "dependencies is " + dependencies
+////    println "description is " + description
+////    println "extensions is " + extensions
+////    println "gradle is " + gradle
+////    println "group is " + group
+////    println "logger is " + logger
+////    println "logging is " + logging
+////    println "name is " + name
+////    println "normalization is " + normalization
+////    println "parent is " + parent
+////    println "path is " + path
+////    println "pluginManager is " + pluginManager
+////    println "plugins is " + plugins
+////    println "project is " + project
+////    println "projectDir is " + projectDir
+////    println "properties is " + properties
+////    println "repositories is " + repositories
+////    println "resources is " + resources
+////    println "rootDir is " + rootDir
+////    println "rootProject is " + rootProject
+////    println "state is " + state
+////    println "status is " + status
+////    println "subprojects is " + subprojects
+////    println "tasks is " + tasks
+////    println "version is " + version
+//
+//
+//
+//    //给one项目创建任务onetk，那么one项目脚本中就可以直接使用
+//    println "tasks is " + tasks //空Map容器
+//    task onetk(group:'mine'){ //定义任务
+//        println "ddd"
+//    }
+//    println "tasks is " + tasks //容器中只有一个就是onetk
+//    
+//}
+
+
+
+
+//class Person {
+//    def age
+//    String name
+//
+//    Person(String name) {
+//        println "~~Person~~"
+//        this.name = name
+//    }
+//
+//}
+
+//NamedDomainObjectContainer<Person> personContainer = container(Person)
+//
+//project.extensions.add('pc', personContainer)
+//
+//pc{
+//    pone{age = 15}
+//    ptwo{age = 25}
+//}
+
+
+//personContainer.all{
+//    println it
+//}
+//
+
+
+//ps {
+//    println(it)
+//}
+
+//println first
+//first {
+//    message = 'ggg'
+//}
+
+
+//ps{
+//    bob { age=14}
+//    tom { age=24}
+//}
+//task xx {
+//    ps.all {
+//        println "$name'age is $age"
+//    }
+//}
+
+
+
+
+//class One {
+//    String k
+//    int i
+//
+//    String name
+//
+//    One(String name) {
+//        this.name = name
+//    }
+//
+//    One(String k, int i) {
+//        this.k = k
+//        this.i = i
+//    }
+//}
+//
+//
+//One one = new One('ddd')
+//one{
+//    i = 15
+//    name = 'bob'
+//}
+//println "$one.i - $one.name"
+
+
+//project.extensions.create('oo', One, 'one!', 111)
+//
+//println oo.k
+//println oo.i
+//
+//oo{
+//    k = 'dssssds'
+//    i = 222
+//}
+//
+//println oo.k
+//println oo.i
+//
+//
+//project.ext.oo = new One('kkk', 666)
+//println project.ext.oo
+//println project.oo
+
+
+//NamedDomainObjectContainer<One> namedDomainObjectContainer = container(One)
+//namedDomainObjectContainer{
+//
+//}
+
+
+

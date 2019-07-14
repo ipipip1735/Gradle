@@ -1,0 +1,27 @@
+/**
+ * 文件遍历
+ */
+//例一
+//fileTree('src'){ //项目根目录下的src目录
+//    exclude('**/*.java')//仅包括java源文件
+//}.each {
+//    println it //遍历结果集打印
+//}
+
+
+//例二
+def myTree = fileTree('src')//创建文件集
+myTree.exclude('**/kk.java')//仅包含kk.java
+
+myTree.each {
+    println "files|$it"
+}
+
+myTree.matching {//使用matching方法过滤文件
+    exclude "**/*.java"
+}.each {
+    println "--"
+    println it
+}
+
+println myTree.dir

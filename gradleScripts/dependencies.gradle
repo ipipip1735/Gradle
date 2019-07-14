@@ -1,0 +1,41 @@
+/**
+ * 创建配置对象实例
+ */
+
+repositories {
+    mavenCentral()//使用中心仓库
+}
+
+configurations {
+    oo
+}
+
+
+dependencies {
+
+    //Maven依赖
+    oo 'junit:junit:jar:4.12'//DSL语法
+//    add('oo', 'junit:junit:jar:4.12')//Groovy语法（和DSL语法是等价的）
+
+    //文件依赖
+    oo fileTree(dir: 'libs', include: ['*.txt']) //DSL语法
+//    add('oo', fileTree(dir: 'libs', include: ['*.txt'])) //Groovy语法（和DSL语法是等价的
+    
+}
+
+
+task info(group: 'mine') {
+    doLast {
+        println "info"
+        configurations.oo {
+            incoming.files.each { println it } //打印依赖处理结果，即下载文件的路径
+
+            println "description|" + description
+            println "name|" + name
+            println "state|" + state
+            println "transitive|" + transitive
+            println "visible|" + visible
+        }
+    }
+    dependsOn 'dependencies'//本任务依赖与dependencies，当dependencies执行完毕，依赖关系处理完毕在执行
+}

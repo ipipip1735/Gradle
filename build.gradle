@@ -1,0 +1,12 @@
+//apply from:'gradleScripts/files.gradle'//测试文件遍历
+
+//apply from:'gradleScripts/tasks.gradle'//测试task关键字
+//apply from:'gradleScripts/projects.gradle'//测试Project代码块
+//apply from:'gradleScripts/syntax.gradle'//测试基本语法
+
+//apply from:'gradleScripts/configuration.gradle'//测试configuration
+apply from:'gradleScripts/dependencies.gradle'//测试依赖配置
+
+//apply from:'gradleScripts/sourceSet.gradle'//测试sourceSet
+//apply from:'gradleScripts/compile.gradle'//测试源码编译
+//apply from:'gradleScripts/plugin.gradle'//测试插件

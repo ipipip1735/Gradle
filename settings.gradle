@@ -1,0 +1,3 @@
+rootProject.name = 'myRoot'
+//include ':one'
+//include 'two'
